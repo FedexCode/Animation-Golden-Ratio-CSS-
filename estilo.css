@@ -1,0 +1,77 @@
+.container { /*creamos un contenedor que ocupe toda la pantalla*/
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background: beige;
+}
+
+.squares {	/*contenedor de cuadrados*/
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 130px;
+	height: 210px;
+
+}
+
+.square {
+	box-sizing: border-box; /*el cuadrado tendra en cuenta el tamaño del borde*/
+	position: absolute;
+	border: 1px solid black;
+	transparent;
+}
+
+.one {
+	width: 130px;
+	height: 130px;
+	bottom: 0;
+}
+
+.two {
+	width: 80px;
+	height: 80px;
+	transform-origin: right bottom; /*cambio el origen abajo a la derecha para que gire*/
+	top: -80px;
+	right: 0;
+}
+
+.three {
+	width: 50px;
+	height: 50px;
+	left: -50px;
+	bottom: 29px;
+	transform-origin: top right;
+}
+
+.four {
+	width: 30px;
+	height: 30px;
+	bottom: -30px;
+	left: -1px;
+	transform-origin: top left;
+}
+
+.five {
+	width: 20px;
+	height: 20px;
+	bottom: -1px;
+	right: -20px;
+	transform-origin: bottom left;
+}
+
+@keyframes rotar { /*defino una animacion*/ 
+	0% {transform: rotate(0deg);} /*al inicio y al final vuelven al estado final*/
+	50% {transform: rotate(180deg);} /*a la mitad rota 180grados*/
+	100% {transform: rotate(0deg);}
+}
+
+.one, .two, .three, .four, .five{ /*agregamos rotacion infinita a los cuadrados hijos*/
+	animation: rotar 8s infinite;
+}
+/* 130 80 50 */
